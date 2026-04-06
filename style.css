@@ -1,0 +1,117 @@
+body {
+  font-family: Arial;
+  margin: 0;
+  background: linear-gradient(135deg,#e8f5e9,#c8e6c9);
+}
+
+/* LOGIN */
+.login-body {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.login-box {
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  width:300px;
+  text-align:center;
+  animation: fadeIn 1s;
+}
+
+input {
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:10px;
+  border:none;
+}
+
+button {
+  width:100%;
+  padding:10px;
+  background:#2e7d32;
+  color:white;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover {
+  transform:scale(1.05);
+}
+
+/* DASHBOARD */
+.container {
+  max-width:400px;
+  margin:auto;
+  padding:20px;
+}
+
+.card {
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  margin-top:20px;
+  animation: fadeUp 0.8s;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+/* Progress bar */
+.bar {
+  width:100%;
+  height:10px;
+  background:#ddd;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+#barFill {
+  height:100%;
+  width:0%;
+  background:#4CAF50;
+  border-radius:10px;
+  transition:1s;
+}
+
+/* logout */
+.logout {
+  margin-top:20px;
+  background:red;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity:0}
+  to {opacity:1}
+}
+
+@keyframes fadeUp {
+  from {transform:translateY(20px); opacity:0}
+  to {transform:translateY(0); opacity:1}
+}
+/* REPORT UI */
+.report-box {
+  margin-top:10px;
+  background:#f1f8e9;
+  padding:10px;
+  border-radius:10px;
+  animation: fadeUp 1s;
+}
+
+/* Chart spacing */
+canvas {
+  margin-top:20px;
+}
+#answer {
+  margin-top: 10px;
+  font-weight: bold;
+}

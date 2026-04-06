@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("login")!="true"){
+  window.location.href="index.html";
+}
+</script>
+
+<div class="container">
+
+<h1>🏭 Smart Factory Analyzer</h1>
+
+<!-- INPUT -->
+<div class="card">
+  <h2>Enter Factory Data</h2>
+  <input type="number" id="time" placeholder="Machine Id">
+  <input type="number" id="time" placeholder="Machine Hours">
+  <input type="number" id="energy" placeholder="Energy (kWh)">
+  <input type="number" id="products" placeholder="Products">
+
+  <button onclick="analyze()">Analyze</button>
+</div>
+
+<!-- RESULT -->
+<div class="card">
+  <h2>Results</h2>
+
+  <div class="grid">
+    <div>Energy/Product: <span id="ep">0</span></div>
+    <div>Time/Product: <span id="tp">0</span></div>
+    <div>Efficiency: <span id="eff">0%</span></div>
+  </div>
+
+  <div class="bar">
+    <div id="barFill"></div>
+  </div>
+</div>
+
+<!-- SUGGESTIONS -->
+<div class="card">
+  <h2>Suggestions</h2>
+  <p id="suggestion"></p>
+</div>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<button onclick="monthlyReport()">Monthly Report</button>
+
+<p id="report"></p>
+<!-- REPORT SECTION -->
+<div class="card">
+  <h2>📅 Monthly Report</h2>
+
+  <button onclick="monthlyReport()">Generate Report</button>
+
+  <div id="reportBox" class="report-box">
+    <p>Total Defects: <span id="totalDef"></span></p>
+    <p>Total Profit: ₹<span id="totalProfit"></span></p>
+  </div>
+
+  <canvas id="reportChart"></canvas>
+</div>
+<input type="number" id="defect" placeholder="Defective Products">
+<input type="number" id="price" placeholder="Price per Product">
+<input type="number" id="cost" placeholder="Cost per Product">
+<button onclick="clearData()">Clear Data</button>
+<!-- AI CHAT -->
+<div class="card glass">
+  <h2>🤖 AI Assistant</h2>
+  
+  <input type="text" id="question" placeholder="Ask something...">
+  <button onclick="askAI()">Ask</button>
+  
+  <p id="answer"></p>
+</div>
